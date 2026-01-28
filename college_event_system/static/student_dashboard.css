@@ -1,0 +1,107 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+/* Body styling */
+body {
+    min-height: 100vh;
+    background: #f4f7fa;
+    color: #333;
+    padding: 20px 0;
+}
+
+/* Main heading */
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 32px;
+    color: #001f4d;
+}
+
+/* Section headings */
+h3 {
+    text-align: center;
+    margin: 20px 0 20px 0;
+    font-size: 24px;
+    color: #001f4d;
+}
+
+/* Navigation links */
+p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+p a {
+    text-decoration: none;
+    color: #001f4d;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+p a:hover {
+    color: #004080;
+}
+
+/* Club cards container */
+.club-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* Individual club card */
+.club-card {
+    background: #ffffff;
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect */
+.club-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Club card header */
+.club-card .header {
+    background-color: #001f4d;
+    color: #fff;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Club card body */
+.club-card .body {
+    padding: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Club head */
+.club-card .club-head {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+    text-align: center;
+}
+
+/* Empty state */
+.empty-message {
+    text-align: center;
+    font-style: italic;
+    color: #555;
+    margin-top: 20px;
+}

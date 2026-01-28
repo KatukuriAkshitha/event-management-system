@@ -1,0 +1,45 @@
+-<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Club</title>
+    <!-- {% load static %}
+<link rel="stylesheet" href="{% static 'club.css' %}"> -->
+
+</head>
+<body>
+
+<h2 align="center">Add New Club</h2>
+
+<form method="post" align="center">
+    {% csrf_token %}
+    <table align="center" cellpadding="10">
+        <tr>
+            <td>Club Name:</td>
+            <td>{{ form.name }}</td>
+        </tr>
+
+        <tr>
+            <td>Description:</td>
+            <td>{{ form.description }}</td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <button type="submit">Add Club</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+{% if form.errors %}
+    <div align="center" style="color:red;">
+        {{ form.errors }}
+    </div>
+{% endif %}
+
+<p align="center">
+    <a href="{% url 'admin_dashboard' %}">Back to Admin Dashboard</a>
+</p>
+
+</body>
+</html>

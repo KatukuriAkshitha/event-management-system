@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Event (Club Head)</title>
+    <!-- {% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}"> -->
+
+</head>
+<body>
+
+<h2 align="center">Add Event for Your Club</h2>
+
+<p align="center">
+    Club: <strong>{{ request.user.club.name }}</strong>
+</p>
+
+<form method="post" align="center">
+    {% csrf_token %}
+    <table align="center" cellpadding="10">
+        <!-- Club field is hidden because club head can add events only for their own club -->
+        <tr style="display:none;">
+            <td>Club:</td>
+            <td>{{ form.club }}</td>
+        </tr>
+
+        <tr>
+            <td>Event Title:</td>
+            <td>{{ form.title }}</td>
+        </tr>
+
+        <tr>
+            <td>Description:</td>
+            <td>{{ form.description }}</td>
+        </tr>
+
+        <tr>
+            <td>Date:</td>
+            <td>{{ form.date }}</td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <button type="submit">Create Event</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+{% if form.errors %}
+    <div align="center" style="color:red;">
+        {{ form.errors }}
+    </div>
+{% endif %}
+
+<p align="center">
+    <a href="{% url 'clubhead_dashboard' %}">Back to Dashboard</a>
+</p>
+
+</body>
+</html>

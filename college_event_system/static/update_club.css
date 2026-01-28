@@ -1,0 +1,101 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page layout */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f3f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Title */
+h2 {
+    margin-bottom: 20px;
+    color:black;
+    letter-spacing: 1px;
+}
+
+/* Form container */
+form {
+    background-color: #ffffff;
+    width: 420px;
+    padding: 25px 30px;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Django form layout fix */
+form p {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+/* Labels */
+form label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #1f2937; /* dark gray */
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Focus effect */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #000000; /* black */
+}
+
+/* Textarea fix */
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #000000; /* black */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1f2937;
+}
+
+/* Back link */
+a {
+    margin-top: 15px;
+    text-decoration: none;
+    color: #000000; /* black */
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}

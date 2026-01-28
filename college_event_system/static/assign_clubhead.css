@@ -1,0 +1,113 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Body Styling */
+ body {
+    min-height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Heading */
+h2 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* Form Container */
+form {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    min-width: 400px;
+}
+
+/* Table inside form */
+table {
+    width: 100%;
+}
+
+/* Table cells */
+td {
+    padding: 12px;
+    vertical-align: middle;
+    font-size: 1rem;
+    color: #495057;
+}
+
+/* Inputs & Selects */
+select,
+input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+select:focus,
+input[type="text"]:focus {
+    border-color: black;
+    box-shadow: 0 0 8px rgba(75,156,226,0.3);
+    outline: none;
+}
+
+/* Button Styling */
+button {
+    padding: 12px 28px;
+    background-color:black;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(59, 113, 113, 0.4);
+}
+
+/* Error message styling */
+p[style*="color:red"] {
+    margin-top: 15px;
+    background-color: #ffe5e5;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #c0392b;
+    font-weight: 500;
+    width: fit-content;
+}
+
+/* Back link styling */
+p a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #495057;
+    font-weight: bold;
+    padding: 8px 18px;
+    border-radius: 8px;
+    background: #f1f3f5;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+p a:hover {
+    background: #e9ecef;
+    box-shadow: 2px 2px 12px rgba(6, 9, 12, 0.3);
+}

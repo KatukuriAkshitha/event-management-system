@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clubs</title>
+    <!-- {% load static %}
+<link rel="stylesheet" href="{% static 'club.css' %}"> -->
+
+</head>
+<body>
+
+<h2 align="center">All Clubs</h2>
+
+<table border="1" align="center" cellpadding="10">
+    <tr>
+        <th>Club Name</th>
+        <th>Description</th>
+        <th>Club Head</th>
+    </tr>
+
+    {% for club in clubs %}
+    <tr>
+        <td>{{ club.name }}</td>
+        <td>{{ club.description }}</td>
+        <td>
+            {% if club.club_head %}
+                {{ club.club_head.username }} ({{ club.club_head.email }})
+            {% else %}
+                Not Assigned
+            {% endif %}
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="3" align="center">No clubs available.</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<p align="center">
+    <a href="{% url 'student_dashboard' %}">Back to Dashboard</a>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+/* Tables */
+table {
+    width: 80%;
+    margin: 10px auto 20px auto;
+    border-collapse: collapse;
+    background-color: #f0f0f0; /* light grey background for table body */
+    border: 1px solid #001f4d; /* navy blue border */
+}
+
+/* Table header */
+table th {
+    background-color: #001f4d; /* navy blue */
+    color: #fff; /* white text */
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #001f4d; /* navy blue border */
+    font-size: 14px;
+}
+
+/* Table cells */
+table td {
+    border: 1px solid #001f4d; /* navy blue border */
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+    color: #000;
+}
+
+/* Alternate row colors */
+table tr:nth-child(even) {
+    background-color: #d9d9d9; /* light grey */
+}
+
+table tr:nth-child(odd) {
+    background-color: #ffffff; /* white */
+}
+
+/* Links inside tables */
+table a {
+    color: #001f4d; /* navy blue links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+table a:hover {
+    color: #004080; /* lighter navy blue on hover */
+    text-decoration: underline;
+}
+
+/* Empty table rows message */
+table td[colspan] {
+    font-style: italic;
+    color: #555;
+}

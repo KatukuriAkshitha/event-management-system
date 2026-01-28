@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assign Club Head</title>
+    <!-- {% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}"> -->
+
+</head>
+<body>
+
+<h2 align="center">Assign Club Head (One Club → One Head)</h2>
+
+<form method="post" align="center">
+    {% csrf_token %}
+    <table align="center" cellpadding="10">
+        <tr>
+            <td>Select Club:</td>
+            <td>{{ form.club }}</td>
+        </tr>
+
+        <tr>
+            <td>Select Student:</td>
+            <td>{{ form.club_head }}</td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <button type="submit">Assign Club Head</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+{% if error %}
+    <p align="center" style="color:red;">{{ error }}</p>
+{% endif %}
+
+<p align="center">
+    <a href="{% url 'admin_dashboard' %}">Back to Admin Dashboard</a>
+</p>
+
+</body>
+</html>

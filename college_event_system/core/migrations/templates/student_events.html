@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Events</title>
+    <!-- {% load static %}
+<link rel="stylesheet" href="{% static 'events.css' %}"> -->
+
+</head>
+<body>
+
+<h2 align="center">All Events</h2>
+
+<p align="center">
+    <a href="{% url 'student_dashboard' %}">Back to Dashboard</a> |
+    <a href="{% url 'logout' %}">Logout</a>
+</p>
+
+<table border="1" align="center" cellpadding="10">
+    <tr>
+        <th>Event Title</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Club</th>
+        <th>Register</th>
+    </tr>
+
+    {% for event in events %}
+    <tr>
+        <td>{{ event.title }}</td>
+        <td>{{ event.description }}</td>
+        <td>{{ event.club.name }}</td>
+        <td>{{ event.date|date:"Y-m-d" }}</td>
+
+       <td>
+    {% if event.id in registered_events %}
+        <span style="color: green; font-weight: bold;">Registered</span>
+    {% else %}
+        <form method="post" style="display:inline;">
+            {% csrf_token %}
+            <input type="hidden" name="event_id" value="{{ event.id }}">
+            <button type="submit">Register</button>
+        </form>
+    {% endif %}
+</td>
+
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="5" align="center">No events available.</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% if message %}
+<p align="center" style="color:green;">{{ message }}</p>
+{% endif %}
+
+</body>
+</html>

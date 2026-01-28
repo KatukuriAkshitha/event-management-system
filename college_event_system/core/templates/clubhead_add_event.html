@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Event (Club Head)</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'add_event.css' %}">
+</head>
+<body>
+
+<h2 align="center">Add Event for Your Club - {{ request.user.club.name }}</h2>
+
+<form method="post" align="center">
+    {% csrf_token %}
+    <table align="center" cellpadding="10">
+        <tr style="display:none;">
+            <td>Club:</td>
+            <td>{{ form.club }}</td>
+        </tr>
+
+        <tr>
+            <td>Event Title:</td>
+            <td>{{ form.title }}</td>
+        </tr>
+
+        <tr>
+            <td>Description:</td>
+            <td>{{ form.description }}</td>
+        </tr>
+
+        <tr>
+            <td>Date:</td>
+            <td>{{ form.date }}</td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <button type="submit">Create Event</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+{% if form.errors %}
+    <div align="center" style="color:red;">
+        {{ form.errors }}
+    </div>
+{% endif %}
+
+<p align="center">
+    <a href="{% url 'clubhead_dashboard' %}">Back to Dashboard</a>
+</p>
+
+</body>
+</html>

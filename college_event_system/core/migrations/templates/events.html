@@ -1,0 +1,93 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Events</title>
+    <!-- {% load static %}
+<link rel="stylesheet" href="{% static 'events.css' %}"> -->
+
+</head>
+<body>
+
+<h2 align="center">All Events (Admin View)</h2>
+
+<p align="center">
+    <a href="{% url 'admin_dashboard' %}">Back to Admin Dashboard</a> |
+    <a href="{% url 'logout' %}">Logout</a>
+</p>
+
+<table border="1" align="center" cellpadding="10">
+    <tr>
+        <th>Event Title</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Club</th>
+        <th>Created By (Club Head)</th>
+        <th>Total Registrations</th>
+    </tr>
+
+    {% for event in events %}
+    <tr>
+        <td>{{ event.title }}</td>
+        <td>{{ event.description }}</td>
+        <td>{{ event.date }}</td>
+        <td>{{ event.club.name }}</td>
+        <td>{{ event.created_by.username }}</td>
+        <td>
+            {{ event.eventregistration_set.count }}
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="6" align="center">No events created yet.</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events</title>
+</head>
+<body>
+
+<h2 align="center">All Events</h2>
+
+<p align="center">
+    <a href="{% url 'student_dashboard' %}">Back to Dashboard</a> |
+    <a href="{% url 'logout' %}">Logout</a>
+</p>
+
+<table border="1" align="center" cellpadding="10">
+    <tr>
+        <th>Event Title</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Club Name</th>
+        <th>Register</th>
+    </tr>
+
+    {% for event in events %}
+    <tr>
+    <td>{{ event.title }}</td>
+    <td>{{ event.description }}</td>
+    <td>{{ event.date }}</td>
+    <td>{{ event.club}}</td>
+    <td>
+            {% if event.is_registered %}
+                <span style="color:green; font-weight:bold;">Registered</span>
+            {% else %}
+                <a href="{% url 'register_event' event.id %}">Register</a>
+            {% endif %}
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="5" align="center">No events available.</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

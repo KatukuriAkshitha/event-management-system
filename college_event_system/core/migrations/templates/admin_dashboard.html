@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+</head>
+<body>
+
+<h2>Admin Dashboard</h2>
+
+<div class="dashboard-links">
+    <a href="{% url 'add_club' %}">Add New Club</a>
+    <a href="{% url 'assign_clubhead' %}">Assign / Modify Club Head</a>
+    <a href="{% url 'admin_add_event' %}">Add Event</a>
+    <a href="{% url 'logout' %}">Logout</a>
+</div>
+
+<!-- ================== CLUBS ================== -->
+
+<h3>All Clubs</h3>
+<table>
+    <tr>
+        <th>Club Name</th>
+        <th>Description</th>
+        <th>Club Head</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for club in clubs %}
+    <tr>
+        <td>{{ club.name }}</td>
+        <td>{{ club.description }}</td>
+        <td>
+            {% if club.club_head %}
+                {{ club.club_head.username }}
+            {% else %}
+                <span class="not-registered">Not Assigned</span>
+            {% endif %}
+        </td>
+        <td>
+            <a href="{% url 'assign_clubhead' %}">Change Head</a> |
+            <a href="{% url 'update_club' club.id %}">Edit</a> 
+            <!-- <a href="{% url 'delete_club' club.id %}"
+               onclick="return confirm('Are you sure you want to delete this club?');">
+               Delete
+            </a> -->
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="4">No clubs created yet.</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<!-- ================== EVENTS ================== -->
+
+<h3>All Events</h3>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Club</th>
+        <th>Date</th>
+        <th>Created By</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for event in events %}
+    <tr>
+        <td>{{ event.title }}</td>
+        <td>{{ event.club.name }}</td>
+        <td>{{ event.date|date:"Y-m-d" }}</td>
+        <td>{{ event.created_by.username }}</td>
+        <td>
+            <a href="{% url 'update_event' event.id %}">Edit</a> |
+            <a href="{% url 'delete_event' event.id %}"
+               onclick="return confirm('Are you sure you want to delete this event?');">
+               Delete
+            </a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="5">No events created yet.</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<!-- ================== STUDENTS ================== -->
+
+<h3>Registered Students</h3>
+<table>
+    <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Role</th>
+    </tr>
+
+    {% for student in students %}
+    <tr>
+        <td>{{ student.username }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.role }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="3">No students registered.</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<!-- ================== REGISTRATIONS ================== -->
+
+<h3>Event Registrations</h3>
+<table>
+    <tr>
+        <th>Student</th>
+        <th>Event</th>
+        <th>Club</th>
+        <th>Registered At</th>
+    </tr>
+
+    {% for reg in registrations %}
+    <tr>
+        <td>{{ reg.student.username }}</td>
+        <td>{{ reg.event.title }}</td>
+        <td>{{ reg.event.club.name }}</td>
+        <td>{{ reg.registered_at }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="4">No registrations yet.</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

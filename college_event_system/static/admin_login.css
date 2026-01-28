@@ -1,0 +1,166 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* ================= BODY ================= */
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://media.getmyuni.com/azure/college-image/big/vignana-bharathi-institute-of-technology-vbit-hyderabad.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ================= MESSAGES ================= */
+.success {
+    color: #0f7d3e;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.error {
+    color: #c62828;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* ================= HEADING ================= */
+h1 {
+    color: black;
+    margin-bottom: 50px; /* increased spacing from heading to card */
+    font-size: 36px;
+    text-shadow: 2px 2px 4px rgba(199, 193, 193, 0.7);
+    animation: fadeSlide 1s ease forwards;
+}
+
+/* ================= GLASS LOGIN CARD ================= */
+.login-container {
+    width: 450px;
+    padding: 30px 40px;
+    border-radius: 18px;
+    text-align: center;
+
+    /* Glassmorphism */
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    box-shadow: 
+        0 10px 35px rgba(0, 0, 0, 0.35),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+
+    /* Animations */
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeSlide 1s ease forwards, floatGlow 4s ease-in-out infinite;
+    animation-delay: 0.3s;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ================= TITLE ================= */
+.title {
+    margin-bottom: 20px;
+    color: #111;
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlide 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/* ================= INPUTS ================= */
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+
+    font-size: 16px;
+    outline: none;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlide 1s ease forwards;
+}
+
+.login-form input:nth-child(1) { animation-delay: 0.6s; }
+.login-form input:nth-child(2) { animation-delay: 0.7s; }
+
+.login-form input:focus {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: black;
+    transform: scale(1.02);
+}
+
+/* ================= BUTTON ================= */
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+
+    background:black;
+    border: none;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlide 1s ease forwards;
+    animation-delay: 0.8s;
+}
+
+.login-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* ================= BACK LINK ================= */
+.back-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #222;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlide 1s ease forwards;
+    animation-delay: 0.9s;
+}
+
+.back-link a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+    transform: scale(1.05);
+}

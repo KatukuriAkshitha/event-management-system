@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Club</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'update_club.css' %}">
+</head>
+<body>
+
+<h2>Update Club</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update</button>
+</form>
+
+<a href="{% url 'admin_dashboard' %}">Back</a>
+
+</body>
+</html>

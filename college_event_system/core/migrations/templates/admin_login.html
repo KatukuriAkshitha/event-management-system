@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <!-- {% load static %}
+    <link rel="stylesheet" href="{% static 'admin_login.css' %}"> -->
+</head>
+<body>
+<h2 align="center">ADMIN-LOGIN</h2>
+<div class="admin-container">
+    <h2>ADMIN LOGIN</h2>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="input-box">
+            <input type="email" name="email" placeholder="Admin Email" required>
+        </div>
+
+        <div class="input-box">
+            <input type="password" name="password" placeholder="Password" required>
+        </div>
+
+        <button type="submit">Login</button>
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <div class="back-link">
+        Back to Student / Club Head Login?  
+        <a href="{% url 'login' %}">Click here</a>
+    </div>
+</div>
+
+</body>
+</html>

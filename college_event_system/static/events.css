@@ -1,0 +1,95 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+
+/* Page layout */
+body {
+    background-color: #f4f6f8;
+    padding: 30px;
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #111827;
+    letter-spacing: 1px;
+}
+
+/* Top links */
+p {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+p a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 600;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Table styling */
+table {
+    width: 95%;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Table headers */
+th {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Table cells */
+td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #1f2937;
+}
+
+/* Alternate row color */
+tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+/* Last row border fix */
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Register link */
+td a {
+    color: #000000;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+/* Registered text */
+td span {
+    font-weight: 600;
+    color: #065f46;
+}
+
+/* Empty message */
+td[colspan] {
+    text-align: center;
+    font-weight: 600;
+    padding: 20px;
+}

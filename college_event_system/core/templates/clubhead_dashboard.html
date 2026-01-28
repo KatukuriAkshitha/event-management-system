@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Club Head Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'clubhead_dashboard.css' %}">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <h2>Club Head Dashboard</h2>
+
+    <div class="welcome-box">
+        <p>
+            Welcome, <strong>{{ request.user.username }}</strong><br>
+            Club: <span>{{ club.name }}</span>
+        </p>
+    </div>
+
+    <div class="nav-links">
+        <a href="{% url 'clubhead_add_event' %}" class="btn">Add New Event</a>
+        <a href="{% url 'logout' %}" class="btn logout">Logout</a>
+    </div>
+
+    <h3>Your Club Events</h3>
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Total Registrations</th>
+        </tr>
+
+        {% for event in events %}
+        <tr>
+            <td>{{ event.title }}</td>
+            <td>{{ event.description }}</td>
+            <td>{{ event.date }}</td>
+            <td>{{ event.eventregistration_set.count }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4" class="no-data">No events created yet.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+</body>
+</html>

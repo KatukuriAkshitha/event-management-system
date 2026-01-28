@@ -1,0 +1,84 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Body Styling */
+body {
+    min-height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Heading */
+h2 {
+    color:white;
+    margin-bottom: 20px;
+}
+
+/* Form Container */
+form {
+    background-color: whitesmoke;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    min-width: 350px;
+}
+
+/* Table inside form */
+table {
+    width: 100%;
+}
+
+/* Table cells */
+td {
+    padding: 10px;
+}
+
+/* Input fields styling */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Button Styling */
+button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: navy;
+}
+
+/* Error message styling */
+div[style*="color:red"] {
+    margin-top: 10px;
+    color: red;
+    font-size: 0.9rem;
+}
+
+/* Back link styling */
+p a {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: underline;
+    color: aliceblue;
+}

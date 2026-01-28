@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+    {% load static %}
+<link rel="stylesheet" href="{% static 'dashboard.css' %}">
+
+</head>
+<body>
+
+<h2 align="center">Student Dashboard</h2>
+
+<p align="center">
+    Welcome, {{ request.user.username }} <br>
+    Email: {{ request.user.email }}
+</p>
+
+<p align="center">
+    <a href="{% url 'student_events' %}">View All Events</a> |
+    <a href="{% url 'logout' %}">Logout</a>
+</p>
+
+<hr>
+
+<h3 align="center">Available Clubs</h3>
+
+<table border="1" align="center" cellpadding="10">
+    <tr>
+        <th>Club Name</th>
+        <th>Description</th>
+        <th>Club Head</th>
+    </tr>
+
+    {% for club in clubs %}
+    <tr>
+        <td>{{ club.name }}</td>
+        <td>{{ club.description }}</td>
+        <td>
+            {% if club.club_head %}
+                {{ club.club_head.username }}
+            {% else %}
+                Not Assigned
+            {% endif %}
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="3" align="center">No clubs available.</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

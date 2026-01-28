@@ -1,0 +1,98 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Times New Roman", Georgia, serif;
+}
+
+/* Body */
+body {
+    background-color:whitesmoke; /* white background */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* vertical centering */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main container */
+.dashboard-container {
+    width: 90%;
+    max-width: 900px;
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(33, 1, 1, 0.1);
+    text-align: center; /* center content */
+}
+
+/* Headings */
+h2, h3 {
+    color: #000000; /* black text */
+    margin-bottom: 15px;
+}
+
+/* Welcome box */
+.welcome-box {
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.welcome-box span {
+    font-weight: bold;
+}
+
+/* Navigation links */
+.nav-links {
+    margin-bottom: 25px;
+}
+
+.nav-links .btn {
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 0 5px;
+    background-color: #000000; /* black button */
+    color: #ffffff; /* white text */
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.nav-links .btn.logout {
+    background-color: #333333; /* slightly lighter black for logout */
+}
+
+.nav-links .btn:hover {
+    opacity: 0.85;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto; /* center table */
+}
+
+th, td {
+    border: 1px solid #000000; /* black borders */
+    padding: 10px;
+    text-align: center;
+    color: #000000;
+    background-color: #ffffff; /* white cells */
+}
+
+tr:nth-child(even) {
+    background-color: #f0f0f0; /* light gray alternate row */
+}
+
+/* No data message */
+.no-data {
+    font-style: italic;
+    color: #555555;
+}
+
+/* Total Registrations - simple emphasis */
+td:nth-child(4) {
+    font-weight: bold;
+    color: #000000;
+}

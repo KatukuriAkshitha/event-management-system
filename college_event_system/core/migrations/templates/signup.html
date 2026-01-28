@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <!-- {% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}"> -->
+
+</head>
+<body>
+
+<h2 align="center">College Event & Club Management - Signup</h2>
+
+<form method="post" align="center">
+    {% csrf_token %}
+
+    <table align="center" cellpadding="10">
+        <tr>
+            <td>Username:</td>
+            <td>{{ form.username }}</td>
+        </tr>
+
+        <tr>
+            <td>Email:</td>
+            <td>{{ form.email }}</td>
+        </tr>
+
+        <tr>
+            <td>Password:</td>
+            <td>{{ form.password1 }}</td>
+        </tr>
+
+        <tr>
+            <td>Confirm Password:</td>
+            <td>{{ form.password2 }}</td>
+        </tr>
+
+        <tr>
+            <td>Role:</td>
+            <td>{{ form.role }}</td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <button type="submit">Signup</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+{% if form.errors %}
+    <div align="center" style="color:red;">
+        {{ form.errors }}
+    </div>
+{% endif %}
+
+<p align="center">
+    Already have an account?
+    <a href="{% url 'login' %}">Login here</a>
+</p>
+
+<p align="center">
+    Admin?
+    <a href="{% url 'admin_login' %}">Admin Login</a>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+/* Reset defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Body styling with blurred VBIT background */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('https://media.getmyuni.com/azure/college-image/big/vignana-bharathi-institute-of-technology-vbit-hyderabad.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+/* Add overlay to blur background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(15px); /* blur amount */
+    z-index: -1;
+}
+
+/* Main heading */
+h1 {
+    margin: 20px 0;
+    font-size: 28px;
+    text-align: center;
+    color: #000;
+    text-shadow: rgb(244, 237, 237);
+}
+
+/* Container for signup form */
+.signup-container {
+    background-color: rgba(255, 255, 255, 0.95); /* slightly transparent white */
+    padding: 30px 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 400px;
+    position: relative;
+}
+
+/* Form heading */
+.signup-container h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+}
+
+/* Messages */
+.message {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.message.error {
+    color: red;
+}
+
+.message.success {
+    color: green;
+}
+
+/* Form groups */
+.signup-form .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.signup-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Inputs and select */
+.signup-form input,
+.signup-form select {
+    padding: 8px 10px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #000;
+}
+
+/* Button */
+.signup-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.signup-form button:hover {
+    background-color: #444;
+}
+
+.signup-form button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+/* Links */
+.login-link,
+.admin-link {
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.login-link a,
+.admin-link a {
+    color: #000;
+    text-decoration: underline;
+}

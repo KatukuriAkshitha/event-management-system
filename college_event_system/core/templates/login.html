@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Login</title>
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+
+<h1>STUDENT / CLUBHEAD LOGIN</h1>
+<div class="login-container">
+    <h2>Login</h2>
+    <!-- MESSAGE DISPLAY -->
+    {% if messages %}
+        {% for message in messages %}
+            <p class="{% if message.tags == 'success' %}success{% else %}error{% endif %}">
+                {{ message }}
+            </p>
+        {% endfor %}
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="input-box">
+            <input type="email" name="email" placeholder="Email" required>
+        </div>
+
+        <div class="input-box">
+            <input type="password" name="password" placeholder="Password" required>
+        </div>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <div class="links">
+        <a href="{% url 'signup' %}">Register</a>
+        <a href="{% url 'admin_login' %}">Admin Login</a>
+    </div>
+</div>
+
+</body>
+</html>
